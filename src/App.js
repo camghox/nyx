@@ -15,8 +15,9 @@ class App extends Component {
     }
 
     initApp () {
+      //
         this.state = { view : 'main' };
-        
+
         axios.post('http://nyx.xifenhezi.com/nyxgame/member/login', {
           did:'TWGDU16B11000023',
           openid:'okc730v0w7OgxW0pPowlSk14PDls',
