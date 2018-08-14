@@ -6,6 +6,9 @@ import logo from './logo.svg';
 import Create from './room/Create';
 import Join from './room/Join';
 import Apply from './agent/Apply';
+import Topbar from './main/Topbar';
+import Bottombar from './main/Bottombar';
+import Playbar from './main/Playbar';
 
 class App extends Component {
     
@@ -86,19 +89,9 @@ class App extends Component {
             return (
                 <div id="App" className="App">
                     <div className="Main">
-                        <header className="App-header">
-                            <img src={logo} className="App-logo" alt="logo" />
-                            <h1 className="App-title">Welcome to React</h1>
-                        </header>
-                        <p className="App-intro">
-                            To get started, edit <code>src/App.js</code> and save to reload.
-                        </p>
-                        <p>
-                            <button onClick={this.create.bind(this)}>Create</button>
-                            <button onClick={this.join.bind(this)}>Join</button>
-                            <button onClick={this.applyAgent.bind(this)}>Apply Agent</button>
-                        </p>
-                        <div id="App-create-menu"></div>
+                        <Topbar></Topbar>
+                        <Playbar></Playbar>
+                        <Bottombar></Bottombar>
                     </div>
                 </div>
             );
