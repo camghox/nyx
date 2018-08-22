@@ -1,0 +1,41 @@
+.SetDetail{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height:100%;
+    width:100%;
+    background: rgba(0,0,0,0.9);
+    box-sizing: border-box;
+}
+.SetContent{
+    background: url(/images/dialog/set/bg.png) no-repeat;
+    background-size: 50% 60%;
+    background-position: 50% 50%;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    padding: 28% 0 0;
+}
+.SetGroup{
+    box-sizing: border-box;
+    height: auto;
+}
+.SetItem1{
+    font-size: 1.3rem;
+}
+.SetItem2{
+    font-size: 1.3rem;
+}
+.CloseButton{
+    position: absolute;
+    top:0.5rem;
+    right:0.5rem;
+    height:3rem;
+    width:3rem;
+    box-sizing: border-box;
+}
+.CloseButton img{
+    height:3rem;
+    width:3rem;
+}

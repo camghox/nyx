@@ -13,24 +13,35 @@
 .Flex-item{
     flex:1;
 }
+.PlayItem{
+    height: 100%!important;
+    line-height: 100%!important;
+    text-align: center!important;
+}
 .Create-Button{
     margin:auto;
     padding:0;
     height:6rem;
     width:6rem;
-    vertical-align: middle;
 }
 .Join-Button{
     margin:auto;
     padding:0;
     height:6rem;
     width:6rem;
-    vertical-align: middle;
 }
 .Agent-Button{
     margin:auto;
     padding:0;
     height:6rem;
     width:6rem;
+}
+.Table{
+    display:table;
+    height: 100%;
+}
+.Table-Cell{
+    display:table-cell;
     vertical-align: middle;
+    text-align: left;
 }

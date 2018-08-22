@@ -1,0 +1,20 @@
+.RoomInfo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    line-height: 2rem;
+    text-align:left;
+    width: 100%;
+    background: none;
+    box-sizing: border-box;
+    margin: 0.5rem;
+    z-index: 9999;
+}
+.InfoItem{
+    display:inline-block;
+    width:6rem;
+    height:2rem;
+    font-size: 0.8rem;
+    color:#fff;
+}

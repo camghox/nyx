@@ -1,0 +1,194 @@
+*{font-size:0.8rem;}
+.GameTable{
+    
+}
+.PlayTable{
+    background: url(/images/bg_zhuomian.png) no-repeat;
+    background-size: 100% 100%;
+}
+.PlayKit{
+    position: absolute;
+    bottom: 0;
+    height: 2rem;
+    width: 100%;
+    line-height: 2rem;
+    text-align: right;
+    background: none;
+    z-index: 9999;
+    color:#fff;
+}
+.PlayersContainer{
+    height: 80%;
+    line-height: 80%;
+}
+.ImgContainer{
+    display:inline-block;
+    background:#efefef;
+    border: 1px solid #efefef;
+    border-radius: 0.3rem;
+}
+.OtherHeadImg{
+    position: absolute;
+    display:inline-block;
+}
+.Player1{
+    position: absolute;
+    left:2rem;
+    bottom:10rem;
+    background:none!important;
+    border: none!important;
+}
+.Player2{
+    position: absolute;
+    left:8rem;
+    bottom:18rem;
+}
+.Player3{
+    position: absolute;
+    left:45%;
+    top:1rem;
+}
+.Player4{
+    position: absolute;
+    right:8rem;
+    bottom:18rem;
+}
+.Player5{
+    position: absolute;
+    right:2rem;
+    bottom:10rem;
+}
+.UsContainer{
+    box-sizing: border-box;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    height: auto;
+    line-height: auto;
+}
+.HeadImg{
+    border: 1px solid #efefef;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block;
+    width: auto;
+    height: 4rem;
+    text-align: center;
+    background: #efefef;
+    float: left;
+}
+.HeadImg .Img{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 4rem;
+    background: none;
+}
+.HeadImg .Img img{
+    margin: 0.5rem 0.5rem 0 0.5rem;
+    height: 3rem;
+    width: 3rem;
+}
+.HeadImg .Nickname{
+    display: inline-block;
+    box-sizing: border-box;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    background: none;
+    margin: 0.5rem;
+}
+.HeadImg .CardDiv{
+    display: inline-block;
+    box-sizing: border-box;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    background: none;
+    margin: 0.5rem;
+}
+.HeadImg .Ingot{
+    box-sizing: border-box;
+    height: 2rem;
+    text-align: center;
+    background: none;
+}
+.CardGroup{
+    box-sizing: border-box;
+    display: inline-block;
+    width: auto;
+    height: 4rem;
+    background: none;
+    float: left;
+}
+.Card{
+    display: inline-block;
+    width: 3rem;
+    height: 100%;
+    background: #efefef;
+    margin: 0;
+    margin-left: 5px;
+    border: 1px solid #efefef;
+    border-radius: 0.3rem;
+}
+.Card img{
+    height: 100%;
+}
+.OtherCardGroup{
+    box-sizing: border-box;
+    display: inline-block;
+    width: auto;
+    height: 3rem;
+    background: none;
+    float: right;
+    margin-left: 3rem;
+}
+.OtherCard{
+    display: inline-block;
+    width: 3rem;
+    height: 3.8rem;
+    background: #efefef;
+    margin: 0;
+    margin-left: -2rem;
+    background: none;
+}
+.OtherCard img{
+    height: 100%;
+}
+.RuleButton{
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    z-index: 9999;
+    display: inline-block;
+    height: 2.6rem;
+    width: 2.6rem;
+}
+.RuleButton img{
+    height: 2.6rem;
+    width: 2.6rem;
+}
+.SetButton{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999;
+    display: inline-block;
+    height: 2.6rem;
+    width: 2.6rem;
+}
+.SetButton img{
+    height: 2.6rem;
+    width: 2.6rem;
+}
+.MsgButton{
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 9999;
+    display: inline-block;
+    height: 2.6rem;
+    width: 2.6rem;
+}
+.MsgButton img{
+    height: 2.6rem;
+    width: 2.6rem;
+}

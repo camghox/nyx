@@ -7,4 +7,38 @@
 }
 .Flex-item{
     flex:1;
+    height: 3rem;
+    line-height: 3rem;
+}
+.HeadImg{
+    height: 3rem;
+    width: 17%;
+    background: none;
+    border: none;
+    box-sizing: border-box;
+    margin: 0.6rem 0;
+}
+.HeadImg img {
+    height: 3.2rem;
+    width: 3.2rem;
+    border: 1px solid #efefef;
+    border-radius: 5px;
+}
+.TopBtnBar{
+    width: 26%;
+    height: 5rem;
+    line-height: 5rem;
+    box-sizing: border-box;
+    padding-top: 0.4rem;
+}
+.TopBtnItem{
+    display:inline-block;
+    width:33%;
+    height: 5rem;
+    line-height: 5rem;
+}
+.TopBtn{
+    margin: 0.1rem;
+    height: 4rem;
+    width: 3rem;
 }

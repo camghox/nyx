@@ -1,0 +1,64 @@
+div{
+    box-sizing: border-box;
+}
+.AgentDetail{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height:100%;
+    width:100%;
+    background: rgba(0,0,0,0.9);
+}
+.AgentTitle{
+    height: 15%;
+}
+.AgentContent{
+    background: url(/images/dialog/agent/bg.png) no-repeat;
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    text-align: left;  
+}
+.AgentContent p{
+    font-size:1rem;
+}
+.Content{
+    overflow: scroll;
+    margin: 0 1rem;
+    height: 80%;
+}
+.Content1{
+    height:auto;
+}
+.Content2{
+    height:auto;
+}
+.ContentTitle{
+    font-size:1.1rem;
+    font-weight: bold;
+}
+.ApplyAction{
+    text-align: center;
+}
+.ApplyAction button{
+    font-size: 1.2rem;
+    width: 8rem;
+    height: 3rem;
+    line-height: 3rem;
+    border: 1px solid #efefef;
+    background: green;
+    border-radius: 1.5rem;
+    color: goldenrod;
+}
+.CloseButton{
+    position: absolute;
+    top:0.5rem;
+    right:0.5rem;
+    height:3rem;
+    width:3rem;
+}
+.CloseButton img{
+    height:3rem;
+    width:3rem;
+}

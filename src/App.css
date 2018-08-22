@@ -1,3 +1,6 @@
+body{ margin:0; height:100%}
+html{ height:100%;}
+div{ height:100%;}
 .App {
     margin:0;
     padding:0;
@@ -43,4 +46,21 @@
     height:100%;
     background: url(/images/main/background.png) no-repeat;
     background-size: 100% 100%;
+}
+.Profile{
+    height: 2rem;
+    line-height: 2rem;
+}
+.PlayItem{
+    height: 100%!important;
+    line-height: 100%!important;
+    text-align: center!important;
+}
+.CloseBtn{
+    position: fixed;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    top: 0;
+    right: 0;
 }

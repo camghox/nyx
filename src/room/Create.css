@@ -2,3 +2,29 @@
     background-image: url(/images/create/background.png);
     background-size: 100% 100%;
 }
+.GameMain{
+    display: flex;
+    width: 100%;
+}
+.GameAction{
+    display: block;
+    width: 100%;
+}
+.GameType{
+    display: inline-block;
+    width: 200px;
+    height: 100%;
+}
+.GameOption{
+    display: inline-block;
+    flex: 1;
+}
+.GameTypeItem{
+    height: 44px;
+    line-height: 44px;
+}
+.GameOptionItem{
+    height: 44px;
+    line-height: 44px;
+    text-align: left;
+}

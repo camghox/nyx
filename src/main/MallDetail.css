@@ -1,0 +1,42 @@
+.MallDetail{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height:100%;
+    width:100%;
+    background: rgba(0,0,0,0.9);
+}
+.MallContent{
+    background: url(/images/dialog/mall/bg.png) no-repeat;
+    background-size: 50% 60%;
+    background-position: 50% 50%;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    padding: 23% 0 0;
+}
+.MallInfoGroup{
+    box-sizing: border-box;
+    height: auto;
+}
+.InfoItem1{
+    font-size: 1.3rem;
+}
+.InfoItem2{
+    font-size: 1.3rem;
+}
+.InfoItem3{
+    font-size: 1.3rem;
+}
+.CloseButton{
+    position: absolute;
+    top:0.5rem;
+    right:0.5rem;
+    height:3rem;
+    width:3rem;
+}
+.CloseButton img{
+    height:3rem;
+    width:3rem;
+}

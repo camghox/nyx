@@ -1,0 +1,25 @@
+.RulesDetail{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height:100%;
+    width:100%;
+    background: rgba(0,0,0,0.9);
+}
+.RulesContent{
+    background: url(/images/dialog/rules/bg.png) no-repeat;
+    background-size: 100% 100%;
+}
+.CloseButton{
+    position: absolute;
+    top:0.5rem;
+    right:0.5rem;
+    height:3rem;
+    width:3rem;
+}
+.CloseButton img{
+    height:3rem;
+    width:3rem;
+}
