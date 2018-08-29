@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Create.css';
-
 import Api from '../Api.js';
 
 class Create extends Component {
@@ -18,6 +17,10 @@ class Create extends Component {
 
         this.doCreate = this.doCreate.bind(this);
         this.doOpenGame = this.doOpenGame.bind(this);
+        this.changeLun = this.changeLun.bind(this);
+        this.changeDing = this.changeDing.bind(this);
+        this.changeNnsz = this.changeNnsz.bind(this);
+        this.changeTbnn = this.changeTbnn.bind(this);
     }
 
     doCreate() {
@@ -40,16 +43,31 @@ class Create extends Component {
         this.props.app.setState({view:'game'});
     }
 
+    close(){
+        window.history.go(-1);
+    }
+
+    changeLun(e){
+        console.info(e)
+    }
+
+    changeDing(e){
+        console.info(e)
+    }
+
+    changeNnsz(e){
+        console.info(e)
+    }
+
+    changeTbnn(e){
+        console.info(e)
+    }
+
     render() {
         return (
             <div className="CreateDialog">
                 <div className="GameMain">
-                    <div className="GameType">
-                        <div className="GameTypeItem">轮庄</div>
-                        <div className="GameTypeItem">定庄</div>
-                        <div className="GameTypeItem">牛牛上庄</div>
-                        <div className="GameTypeItem">通比牛牛</div>
-                    </div>
+                    <TypeButtonGroup></TypeButtonGroup>
                     <div className="GameOption">
                         <div className="GameOptionItem">
                             <span>局数</span>
@@ -82,14 +100,108 @@ class Create extends Component {
                             <span><input type="checkbox" name="spectype" value="1" />五花（5倍）</span>
                             <span><input type="checkbox" name="spectype" value="2" />炸弹（6倍）</span>
                         </div>
+                        <div className="Buttonbar">
+                            <CreateButton></CreateButton>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <button onClick={this.doCreate.bind(this)}>确定</button>
+                <div className="CloseButton" onClick={this.close}>
+                    <img alt="" src="/images/create/close.png" />
                 </div>
             </div>
-            
         );
+    }
+}
+
+class CreateButton extends Component {
+
+    constructor(props){
+        super(props);
+    }
+
+    render(){
+        return <div className="ButtonWrapper">
+                    <img alt="" src="/images/create/create.png" />
+                </div>;
+    }
+}
+
+class TypeButtonGroup extends Component {
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            isLunBtn: true,
+            isDingBtn: false,
+            isNnszBtn: false,
+            isTbnnBtn: false,
+        };
+        this.clickLun = this.clickLun.bind(this);
+        this.clickDing = this.clickDing.bind(this);
+        this.clickNnsz = this.clickNnsz.bind(this);
+        this.clickTbnn = this.clickTbnn.bind(this);
+    }
+
+    clickLun() {
+        //console.info('lun');
+        this.setState({
+            isLunBtn: true,
+            isDingBtn: false,
+            isNnszBtn: false,
+            isTbnnBtn: false,
+        });
+    }
+
+    clickDing() {
+        //console.info('ding');
+        this.setState({
+            isLunBtn: false,
+            isDingBtn: true,
+            isNnszBtn: false,
+            isTbnnBtn: false,
+        });
+    }
+
+    clickNnsz() {
+        //console.info('nnsz');
+        this.setState({
+            isLunBtn: false,
+            isDingBtn: false,
+            isNnszBtn: true,
+            isTbnnBtn: false,
+        });
+    }
+
+    clickTbnn() {
+        //console.info('tbnn');
+        this.setState({
+            isLunBtn: false,
+            isDingBtn: false,
+            isNnszBtn: false,
+            isTbnnBtn: true,
+        });
+    }
+
+    render(){
+        var lunBtn = <img alt="" src="/images/create/type/lun1.png" />;
+        if (this.state.isLunBtn)
+            lunBtn = <img alt="" src="/images/create/type/lun2.png" />;
+        var dingBtn = <img alt="" src="/images/create/type/ding1.png" />;
+        if (this.state.isDingBtn)
+            dingBtn = <img alt="" src="/images/create/type/ding2.png" />;
+        var nnszBtn = <img alt="" src="/images/create/type/nnsz1.png" />;
+        if (this.state.isNnszBtn)
+            nnszBtn = <img alt="" src="/images/create/type/nnsz2.png" />;
+        var tbnnBtn = <img alt="" src="/images/create/type/tbnn1.png" />;
+        if (this.state.isTbnnBtn)
+            tbnnBtn = <img alt="" src="/images/create/type/tbnn2.png" />;
+        return  <div className="GameType">
+                    <div className="GameTypeItem" onClick={this.clickLun}>{lunBtn}</div>
+                    <div className="GameTypeItem" onClick={this.clickDing}>{dingBtn}</div>
+                    <div className="GameTypeItem" onClick={this.clickNnsz}>{nnszBtn}</div>
+                    <div className="GameTypeItem" onClick={this.clickTbnn}>{tbnnBtn}</div>
+                </div>;
     }
 }
 

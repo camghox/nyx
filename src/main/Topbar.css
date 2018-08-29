@@ -7,8 +7,8 @@
 }
 .Flex-item{
     flex:1;
-    height: 3rem;
-    line-height: 3rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
 }
 .HeadImg{
     height: 3rem;
@@ -41,4 +41,22 @@
     margin: 0.1rem;
     height: 4rem;
     width: 3rem;
+}
+.Nickname{
+    background: url(/images/main/top/titlebg.png) no-repeat;
+    color: #fff;
+    background-size: 60% 70%;
+    background-position: 50% 40%;
+}
+.MID{
+    background: url(/images/main/top/titlebg.png) no-repeat;
+    color: #fff;
+    background-size: 60% 70%;
+    background-position: 50% 40%;
+}
+.Ingot{
+    background: url(/images/main/top/ingotbg.png) no-repeat;
+    color: #fff;
+    background-size: 80% 86%;
+    background-position: 80% 40%;
 }

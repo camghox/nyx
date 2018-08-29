@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 import './App.css';
 import './main/Playbar.css';
@@ -21,76 +22,17 @@ class App extends Component {
     initApp () {
         //
     }
-    
-    create () {
-        this.setState({
-            view: 'create'
-        });
-        console.info('create');
-    } 
-    doCreate () {
-        this.setState({
-            view: 'game'
-        });
-        console.info('doCreate');
-    }
-    join () {
-        this.setState({
-            view: 'join'
-        });
-        console.info('join');
-    }
-
-    applyAgent (){
-        this.setState({
-            view: 'agent'
-        });
-        console.info('agent');
-    }
-
-    close (){
-        this.setState({
-            view: 'main'
-        });
-        console.info('main');
-    }
 
     render() {
-        if (this.state.view === 'create') {
-            return (
-                <div id="App" className="App">
-                    <div className="CloseBtn">
-                        <button onClick={this.close.bind(this)}>Close</button>
-                    </div>
-                    <Create app={this}></Create>
-                </div>
-            );
-        } else if (this.state.view === 'game') {
+        if (this.state.view === 'game') {
           return (
               <div id="App" className="App">
                   <Game></Game>
               </div>
           );
-        } else if (this.state.view === 'join') {
-            return (
-                <div id="App" className="App">
-                    <div className="CloseBtn">
-                        <button onClick={this.close.bind(this)}>Close</button>
-                    </div>
-                    <Join app={this}></Join>
-                </div>
-            );
-        } else if (this.state.view === 'agent') {
-            return (
-                <div id="App" className="App">
-                    <div className="CloseBtn">
-                        <button onClick={this.close.bind(this)}>Close</button>
-                    </div>
-                    <Apply></Apply>
-                </div>
-            );
         } else if (this.state.view === 'main') {
             return (
+                <Router>
                 <div id="App" className="App">
                     <div className="Main">
                         <Topbar></Topbar>
@@ -100,17 +42,17 @@ class App extends Component {
                                 <div className="Flex-item PlayItem Table-Cell">&nbsp;</div>
                                 <div className="Flex-item PlayItem Table">
                                     <span className="Table-Cell">
-                                        <img alt="创建房间" src="/images/main/play/create.png" className="Create-Button" onClick={this.create.bind(this)} />
+                                    <Link to="create"><img alt="创建房间" src="/images/main/play/create.png" className="Create-Button"/></Link>
                                     </span>
                                 </div>
                                 <div className="Flex-item PlayItem Table">
                                     <span className="Table-Cell">
-                                        <img alt="加入房间" src="/images/main/play/join.png" className="Join-Button" onClick={this.join.bind(this)} />
+                                        <Link to="join"><img alt="加入房间" src="/images/main/play/join.png" className="Join-Button"/></Link>
                                     </span>
                                 </div>
                                 <div className="Flex-item PlayItem Table">
                                     <span className="Table-Cell">
-                                        <img alt="申请代理" src="/images/main/play/agent.png" className="Agent-Button" onClick={this.applyAgent.bind(this)} />
+                                    <Link to="apply"><img alt="申请代理" src="/images/main/play/agent.png" className="Agent-Button" /></Link>
                                     </span>
                                 </div>
                                 <div className="Flex-item PlayItem Table-Cell">&nbsp;</div>
@@ -118,7 +60,11 @@ class App extends Component {
                         </div>
                         <Bottombar></Bottombar>
                     </div>
+                    <Route path="/create" component={Create}/>
+                    <Route path="/join" component={Join}/>
+                    <Route path="/apply" component={Apply}/>
                 </div>
+                </Router>
             );
         } else {
             return (
