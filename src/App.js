@@ -63,6 +63,7 @@ class App extends Component {
                     <Route path="/create" component={Create}/>
                     <Route path="/join" component={Join}/>
                     <Route path="/apply" component={Apply}/>
+                    <Route path="/game" component={Game}/>
                 </div>
                 </Router>
             );

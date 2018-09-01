@@ -1,10 +1,19 @@
 *{font-size:0.8rem;}
 .GameTable{
-    
+    box-sizing: border-box;
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height:100%;
+    width:100%;
+    background: rgba(0,0,0,0.9);
+    height: 100%;
 }
 .PlayTable{
-    background: url(/images/bg_zhuomian.png) no-repeat;
-    background-size: 100% 100%;
+    /*background: url(/images/bg_zhuomian.png) no-repeat;
+    background-size: 100% 100%;*/
 }
 .PlayKit{
     position: absolute;
@@ -62,9 +71,10 @@
     box-sizing: border-box;
     padding: 0.5rem 2rem;
     text-align: center;
-    height: auto;
-    line-height: auto;
+    height: 20%;
+    line-height: 20%;
 }
+/*
 .HeadImg{
     border: 1px solid #efefef;
     border-radius: 4px;
@@ -111,6 +121,7 @@
     text-align: center;
     background: none;
 }
+
 .CardGroup{
     box-sizing: border-box;
     display: inline-block;
@@ -153,6 +164,7 @@
 .OtherCard img{
     height: 100%;
 }
+*/
 .RuleButton{
     position: absolute;
     top: 50%;
@@ -192,3 +204,9 @@
     height: 2.6rem;
     width: 2.6rem;
 }
+.PlayerFace{
+    position: absolute;
+    width: 8rem;
+    height: 4rem;
+}
+

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Game.css';
 import Api from '../Api.js';
 import RoomInfo from './com/RoomInfo.js';
+import PlayerFace from './com/PlayerFace.js';
 
 class Game extends Component {
 
@@ -24,11 +25,11 @@ class Game extends Component {
         this.quitGame = this.quitGame.bind(this);
         this.playout = this.playout.bind(this);
         this.getGameState = this.getGameState.bind(this);
-        //this.stateInterval = setInterval(this.getGameState, 1000);
+        this.stateInterval = setInterval(this.getGameState, 1000);
     }
 
     getGameState(){
-        console.info('get state');
+        //console.info('get state');
         var self = this;
         this.api.getstate(function(data){
             console.info('check state');
@@ -139,10 +140,7 @@ class Game extends Component {
                     }
                     </div>
                     <div className="UsContainer">
-                        <HeadImg profile={profile}></HeadImg>
-                        <div className="CardDiv">
-                        <CardGroup cards={this.state.cards}></CardGroup>
-                        </div>
+                        <PlayerFace class={'PlayerFace MyFace'} src={profile.avatar} name={profile.nickname} ismaster={1} score={0} cards={this.state.cards}></PlayerFace>
                     </div>
                 </div>               
                 <div className="PlayKit">
