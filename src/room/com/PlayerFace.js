@@ -26,11 +26,6 @@ class PlayerFace extends Component {
                 <img alt="" src={card.name} />
             </div>);
         }
-        var card1 = this.state.cards[0];
-        var card2 = this.state.cards[1];
-        var card3 = this.state.cards[2];
-        var card4 = this.state.cards[3];
-        var card5 = this.state.cards[4];
         return (
             <div className={this.state.class}>
                 <div className="HeadImgWrapper">

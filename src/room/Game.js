@@ -25,14 +25,14 @@ class Game extends Component {
         this.quitGame = this.quitGame.bind(this);
         this.playout = this.playout.bind(this);
         this.getGameState = this.getGameState.bind(this);
-        this.stateInterval = setInterval(this.getGameState, 1000);
+        //this.stateInterval = setInterval(this.getGameState, 1000);
     }
 
     getGameState(){
         //console.info('get state');
         var self = this;
         this.api.getstate(function(data){
-            console.info('check state');
+            //console.info('check state');
             if (data && data.state) {
                 switch(parseInt(data.state, 10)){
                     case 1: {
@@ -124,7 +124,7 @@ class Game extends Component {
                 <div className="PlayTable">
                     <div className="PlayersContainer">
                     {this.state.player1.mid &&
-                        <OtherHeadImg player={this.state.player1} class="HeadImg Player1" ></OtherHeadImg>
+                        <PlayerFace class={'PlayerFace OtherPlayerFace Player1'} src={this.state.player1.avatar} name={this.state.player1.nickname} ismaster={0} score={0} cards={this.state.player1.cards}></PlayerFace>
                     }
                     {this.state.player2.mid &&
                         <OtherHeadImg player={this.state.player2} class="HeadImg Player2" ></OtherHeadImg>

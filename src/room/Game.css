@@ -173,6 +173,7 @@
     display: inline-block;
     height: 2.6rem;
     width: 2.6rem;
+    display: none;
 }
 .RuleButton img{
     height: 2.6rem;
@@ -186,6 +187,7 @@
     display: inline-block;
     height: 2.6rem;
     width: 2.6rem;
+    display: none;
 }
 .SetButton img{
     height: 2.6rem;
@@ -199,14 +201,13 @@
     display: inline-block;
     height: 2.6rem;
     width: 2.6rem;
+    display: none;
 }
 .MsgButton img{
     height: 2.6rem;
     width: 2.6rem;
 }
-.PlayerFace{
-    position: absolute;
-    width: 8rem;
-    height: 4rem;
-}
 
+.PlayKit button{
+    background: #ffffff;
+}

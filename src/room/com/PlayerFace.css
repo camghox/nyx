@@ -47,5 +47,18 @@
     height: 4rem;
 }
 .OtherPlayerFace .CardWrapper .Card{
-    margin-left: -2rem;
+    margin-left: -1.8rem;
+}
+.Card{
+    display: inline-block;
+    width: 3rem;
+    height: 100%;
+    background: #efefef;
+    margin: 0;
+    margin-left: 5px;
+    border: 1px solid #efefef;
+    border-radius: 0.1rem;
+}
+.Card img{
+    height: 100%;
 }

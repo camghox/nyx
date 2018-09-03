@@ -12,6 +12,10 @@ class Api {
     mid(){
         return this.storage.getItem("mid");
     }
+    
+    avatar(){
+        return this.storage.getItem("avatar");
+    }
 
     nickname(){
         return this.storage.getItem("nickname");
@@ -22,42 +26,39 @@ class Api {
     }
 
     roomnum(){
-        return this.storage.getItem("room_num");
+        return this.storage.getItem("room_room_num");
     }
 
     roomid(){
-        return this.storage.getItem("rid");
+        return this.storage.getItem("room_rid");
     }
 
     rid(){
-        return this.storage.getItem("rid");
+        return this.storage.getItem("room_rid");
     }
 
     rrid(){
-        return this.storage.getItem("rrid");
+        return this.storage.getItem("round_rrid");
     }
 
     cards(){
-        return this.storage.getItem("cards");
-    }
-
-    avatar(){
-        return this.storage.getItem("avatar");
+        return this.storage.getItem("round_cards");
     }
 
     roominfo(){
-        var playtype = this.storage.getItem("playtype");
+        var playtype = this.storage.getItem("room_playtype");
         return {
-            rid: this.storage.getItem("rid"),
+            rid: this.storage.getItem("room_rid"),
             playtype: playtype,
             playtypestr: PLAYTYPE[playtype],
-            base: this.storage.getItem("base"),
-            rridx: this.storage.getItem("rridx"),
-            spectype: this.storage.getItem("spectype"),
-            rules: this.storage.getItem("rules"),
-            roomnum: this.storage.getItem("room_num"),
-            round: this.storage.getItem("round"),
-            paytype: this.storage.getItem("paytype"),
+            base: this.storage.getItem("room_base"),
+            rrid: this.storage.getItem("room_rrid"),
+            rridx: this.storage.getItem("room_rridx"),
+            spectype: this.storage.getItem("room_spectype"),
+            rules: this.storage.getItem("room_rules"),
+            roomnum: this.storage.getItem("room_room_num"),
+            round: this.storage.getItem("room_round"),
+            paytype: this.storage.getItem("room_paytype"),
         };
     }
 
@@ -81,7 +82,7 @@ class Api {
         .then(res => {
             console.info(res.data);
             if (res.data && res.data.member) {
-                self.store(res.data.member);
+                self.store('', res.data.member);
                 if (callback) callback(res.data);
             }
         })
@@ -98,7 +99,7 @@ class Api {
             //console.info(res.data);
             if (res.data && callback) {
                 if (res.data.room) {
-                    self.store(res.data.room);
+                    self.store('room', res.data.room);
                 }
                 callback(res.data);
             }
@@ -125,7 +126,7 @@ class Api {
             //console.info(res.data);
             if (res.data && callback) {
                 if (res.data.room) {
-                    self.store(res.data.room);
+                    self.store('room', res.data.room);
                 }
                 callback(res.data);
             }
@@ -163,7 +164,7 @@ class Api {
         axios.post(APIBASE + '/nyxgame/niuniu/state', params)
         .then(res => {
             console.info(res.data);
-            self.store(res.data);
+            this.store('round', res.data);
             if (res.data && callback) callback(res.data);
         })
         .catch(function(err){
@@ -249,9 +250,12 @@ class Api {
         //console.info(params);
     }
 
-    store(data){
+    store(prefix, data){
         for (var k in data) {
-            this.storage.setItem(k, data[k]);
+            if (prefix && prefix.length > 0)
+                this.storage.setItem(prefix + '_' + k, data[k]);
+            else
+                this.storage.setItem(k, data[k]);
         }
     }
 
@@ -261,7 +265,7 @@ class Api {
             var card = cards[k];
             cardsarr.push(card['cid'] + ":" + card['value'] + ":" + card['color']);
         }
-        this.storage.setItem('cards', cardsarr.join(";"));
+        this.storage.setItem('round_cards', cardsarr.join(";"));
     }
 }
 
