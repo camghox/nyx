@@ -57,7 +57,7 @@ class Login extends Component {
     render() {
 
         const listItems = this.state.members.map((member, index) =>
-            <p>
+            <p key={index}>
                 <button onClick={() => this.doLogin(index)}>{member.name}</button>
             </p> 
         );

@@ -16,7 +16,7 @@ class Create extends Component {
         this.spectype = [];
 
         this.doCreate = this.doCreate.bind(this);
-        this.doOpenGame = this.doOpenGame.bind(this);
+        this.finishCreate = this.finishCreate.bind(this);
         this.changeLun = this.changeLun.bind(this);
         this.changeDing = this.changeDing.bind(this);
         this.changeNnsz = this.changeNnsz.bind(this);
@@ -26,7 +26,6 @@ class Create extends Component {
     doCreate() {
         var token = this.api.token();
         console.info('do create');
-        console.info(this.props.app);
         this.api.create({
             token: token,
             playtype: this.playtype,
@@ -35,12 +34,15 @@ class Create extends Component {
             paytype: this.paytype,
             rules: this.rules,
             spectype: this.spectype.join(","),
-        }, this.doOpenGame);
+        }, this.finishCreate);
     }
 
-    doOpenGame(data) {
+    finishCreate(data) {
         console.info("do open game");
-        this.props.app.setState({view:'game'});
+        if (data.ret === 0) {
+            window.location = '/game';
+        }
+        //this.props.app.setState({view:'game'});
     }
 
     close(){
@@ -101,7 +103,9 @@ class Create extends Component {
                             <span><input type="checkbox" name="spectype" value="2" />炸弹（6倍）</span>
                         </div>
                         <div className="Buttonbar">
-                            <CreateButton></CreateButton>
+                            <div className="ButtonWrapper">
+                                <img alt="" src="/images/create/create.png" onClick={this.doCreate} />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -117,6 +121,8 @@ class CreateButton extends Component {
 
     constructor(props){
         super(props);
+
+        this.onClick = props.onClick.bind(this);
     }
 
     render(){
